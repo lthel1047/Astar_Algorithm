@@ -4,7 +4,7 @@ A* 알고리즘을 공부하며 위키백과 및 다른 개발자들의 코드�
 공부하며 GUILayout을 이용해 유저의 편의를 생각해 사용해 보았습니다.  
 처음 제대로 사용해봐서 공부하는데 사용하는데 어려움이 많았습니다.  
 
-'''
+  '''
 
     void ReconstructionGrid(int windowId)
     {
@@ -25,45 +25,6 @@ A* 알고리즘을 공부하며 위키백과 및 다른 개발자들의 코드�
         grid.gridWorldSize.y = int.Parse(value);
         GUILayout.EndHorizontal();
         GUILayout.EndVertical();
-        if (GUILayout.Button("Change Grid"))
-        {
-            main.StartGrid();
-            pauseBut = false;
-        }
-        if (!main.finding && pauseBut)
-        {
-            if (GUILayout.Button("Resume Search"))
-            {
-                main.finding = true;
-                pauseBut = false;
-            }            
-        }
-        else
-        {
-            if (GUILayout.Button("Start Search"))
-            {
-                main.StartFinding(true);                
-            }            
-        }
-        if (pauseBut)
-        {
-            if (GUILayout.Button("Cancel Search"))
-            {
-                pauseBut = false;
-                main.StartFinding(false);
-            }
-        }
-        else
-        {
-            if (GUILayout.Button("Pause Search"))
-            {
-                if (main.finding)
-                {
-                    pauseBut = true;
-                    main.finding = false;
-                }                
-            }
-        }
-
-    }
-    '''
+     }   
+   '''
+각종 GUI 버튼을 구현하였습니다.
