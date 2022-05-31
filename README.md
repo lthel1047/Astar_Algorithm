@@ -4,7 +4,6 @@ A* 알고리즘을 공부하며 위키백과 및 다른 개발자들의 코드�
 공부하며 GUILayout을 이용해 유저의 편의를 생각해 사용해 보았습니다.  
 처음 제대로 사용해봐서 공부하는데 사용하는데 어려움이 많았습니다.  
 
-  '''
 
     void ReconstructionGrid(int windowId)
     {
@@ -26,5 +25,4 @@ A* 알고리즘을 공부하며 위키백과 및 다른 개발자들의 코드�
         GUILayout.EndHorizontal();
         GUILayout.EndVertical();
      }   
-   '''
-각종 GUI 버튼을 구현하였습니다.
+ 각종 GUI 버튼을 구현하였습니다.
