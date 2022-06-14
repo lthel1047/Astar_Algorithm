@@ -59,6 +59,7 @@ public class Main : MonoBehaviour
         while (openSet.Count > 0)
         {
             Node currentNode = openSet[0];
+            // Open 에서 fCost가 가장 작은 노드 체크
             for(int i = 1; i<openSet.Count; i++)
             {
                 if (openSet[i].fCost < currentNode.fCost || openSet[i].fCost == currentNode.fCost && openSet[i].hCost < currentNode.hCost)
@@ -69,7 +70,8 @@ public class Main : MonoBehaviour
 
             openSet.Remove(currentNode);
             closedSet.Add(currentNode);
-
+            
+            // 종료지점
             if (currentNode == end)
             {
                 pathSuccess = true;
@@ -81,9 +83,11 @@ public class Main : MonoBehaviour
 
             if (currentNode != start)
                 currentNode.ChangeColor = Color.Lerp(Color.cyan, Color.white, 0.2f);
-
+            
+            // 이웃 노드 검색 구간
             foreach (Node neighbour in grid.GetNeighbours(currentNode))
             {
+                // 이동불가 노드 or 이미 검색된 노드 
                 if (!neighbour.walkable  || closedSet.Contains(neighbour))
                 {
                     continue;
@@ -105,6 +109,7 @@ public class Main : MonoBehaviour
                 }
             }
         }
+        // 성공적으로 계산이 완료시
         if (pathSuccess)
         {
             DrawingLine(RetracePath(start, end));
@@ -153,7 +158,7 @@ public class Main : MonoBehaviour
             lineRander.SetPosition(i, waypoints[i]);
         }
     }
-
+    // 노드간의 계산 식
     int GetDistance(Node nodeA, Node nodeB)
     {
         int dstX = Mathf.Abs(nodeA.gridX - nodeB.gridX);
