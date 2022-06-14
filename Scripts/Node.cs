@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// 시작과 도착 지점 노드를 만들고 마우스로 위치를 조정
 public class Node
 {
     public GameObject ground;
