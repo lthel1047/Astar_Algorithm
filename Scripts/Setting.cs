@@ -23,6 +23,7 @@ public class Setting : MonoBehaviour
             Node node = RayCast();
             if (node != null)
             {
+                // 반환된 노드가 Start / End 인지 
                 if(node.start || node.end)
                     StartCoroutine("SwitchStartEnd", node);
                 else
